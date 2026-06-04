@@ -1,3 +1,6 @@
+## A Multimodal RAG System for Canadian Financial Reports
+---
+
 #### 🚀 Setup & Installation
 
 **Prerequisites**
@@ -7,7 +10,7 @@
 
 **1. Clone the Repository**
 ```bash
-git clone https://github.com/[your-username]/CanFin-MultiQuarter-RAG.git
+git clone https://github.com/TorshaMajumder/CanFin-MultiQuarter-RAG.git
 cd CanFin-MultiQuarter-RAG
 ```
 
