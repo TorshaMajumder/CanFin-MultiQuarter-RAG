@@ -55,10 +55,6 @@ This application is built to solve the "Temporal Knowledge" problem in RAG syste
 
 ## 📺 Demo
 
-<div align="center">
-  <video src="https://github.com/TorshaMajumder/CanFin-MultiQuarter-RAG/blob/main/img/streamlit-app.webm" poster="https://github.com/TorshaMajumder/CanFin-MultiQuarter-RAG/blob/main/img/thumbnail.png" width="100%" controls>
-  </video>
-</div>
-
+[streamlit-app.webm](https://github.com/user-attachments/assets/e1320f49-5be3-42d1-9e99-10569a1de8a6)
 
 ---
