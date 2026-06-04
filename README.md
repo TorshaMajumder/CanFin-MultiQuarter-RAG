@@ -1,4 +1,4 @@
-## A Multimodal RAG System for Canadian Financial Reports
+## A Multimodal, Temporal RAG System for Canadian Financial Reports
 
 #### 🚀 Setup & Installation
 
@@ -53,7 +53,13 @@ This application is built to solve the "Temporal Knowledge" problem in RAG syste
 
 ---
 
-### 📺 Demo
+## 📺 Demo
+
+<details>
+  <summary>Click to view video demo</summary>
+  <br>
+  <video src="img/streamlit-app.webm" poster="img/thumbnail.png" width="100%" controls></video>
+</details>
 
 
 ---
