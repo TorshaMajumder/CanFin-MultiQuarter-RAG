@@ -1,5 +1,4 @@
 ## A Multimodal RAG System for Canadian Financial Reports
----
 
 #### 🚀 Setup & Installation
 
@@ -51,5 +50,10 @@ This application is built to solve the "Temporal Knowledge" problem in RAG syste
 #### 📊 Engineering Challenges Solved
 *   **Table Integrity:** Solved the loss of tabular data relationships by utilizing Markdown-based chunking.
 *   **Comparison Logic:** Developed a targeted retrieval loop that queries separate namespaces/filters for different quarters, ensuring the LLM receives a balanced context for comparative analysis.
+
+---
+
+#### DEMO
+
 
 ---
