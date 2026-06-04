@@ -56,7 +56,7 @@ This application is built to solve the "Temporal Knowledge" problem in RAG syste
 ## 📺 Demo
 
 <div align="center">
-  <video src="./img/streamlit-app.webm" poster="./img/thumbnail.png" width="100%" controls>
+  <video src="./img/streamlit-app.webm" width="100%" controls>
   </video>
 </div>
 
