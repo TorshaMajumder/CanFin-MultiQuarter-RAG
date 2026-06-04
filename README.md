@@ -1,4 +1,4 @@
-## A Multimodal, Temporal RAG System for Canadian Financial Reports
+## A Multimodal Temporal RAG System for Canadian Financial Reports
 
 #### 🚀 Setup & Installation
 
