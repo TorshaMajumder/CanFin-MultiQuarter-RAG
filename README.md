@@ -53,7 +53,7 @@ This application is built to solve the "Temporal Knowledge" problem in RAG syste
 
 ---
 
-#### DEMO
+### 📺 Demo
 
 
 ---
