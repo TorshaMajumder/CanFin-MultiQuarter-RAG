@@ -53,8 +53,16 @@ This application is built to solve the "Temporal Knowledge" problem in RAG syste
 
 ---
 
-## 📺 Demo
+## 🚀 Live Demo
 
-[streamlit-app.webm](https://github.com/user-attachments/assets/e1320f49-5be3-42d1-9e99-10569a1de8a6)
+<div align="center">
+  <video src="YOUR_DRAGGED_LINK_HERE" width="100%" autoplay loop muted playsinline></video>
+
+  <br/>
+
+[Streamlit App](https://github.com/user-attachments/assets/e1320f49-5be3-42d1-9e99-10569a1de8a6)
+
+</div>
+
 
 ---
