@@ -1,8 +1,9 @@
 import os
 import yaml
-import instructor
-from google.generativeai import configure
+# import instructor
+# from google.generativeai import configure
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.messages import HumanMessage, SystemMessage
 from schema import FinancialAnalysis # Import the schema we just made
 # from groq import Groq
 import pymupdf4llm
@@ -17,10 +18,8 @@ def main(config, path_to_doc):
     pc = Pinecone(api_key=config["PC_API_KEY"])
     index = pc.Index(config["pinecone_index_name"])
     embed_model = SentenceTransformer(config["embedding_model_name"])
-    client = instructor.from_google(
-    client=ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", api_key=config["GOOGLE_API_KEY"]),
-    mode=instructor.Mode.GEMINI_JSON,
-    )
+    client = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", api_key=config["GOOGLE_API_KEY"], temperature=0.1 )
+    structured_llm = client.with_structured_output(FinancialAnalysis)
 
     # Define the files and their labels
     docs = [
@@ -102,7 +101,7 @@ def main(config, path_to_doc):
         
         # Construct the Analysis Prompt
         prompt = f"""
-        You are a Senior Financial Analyst. Analyze the performance of Shopify 
+        Analyze the performance of Shopify 
         by comparing {q_a} data with {q_b} data based ONLY on the context below.
 
         --- CONTEXT FOR {q_a} ---
@@ -117,24 +116,25 @@ def main(config, path_to_doc):
         Use a bulleted list for the comparison.
         """
 
-        response = client.chat.completions.create(
-                                                        model=FinancialAnalysis,
-                                                        messages=[{"role": "user", "content": prompt}],
-                                                        temperature=0.1
-                                                    )
+        messages = [
+                        SystemMessage(content="You are a Senior Financial Analyst."),
+                        HumanMessage(content=prompt)
+                    ]
+
+        response = structured_llm.invoke(messages)
         
-        return response.metrics[0].value
+        return response.summary_insight
 
     # ======================================================================================
     # Run the pipeline
     # Upload the PDF to pinecone
-    for doc in docs:
-        if os.path.exists(doc["path"]):
-            process_and_upload(doc)
-        else:
-            print(f"\nFile not found: {doc['path']}")
+    # for doc in docs:
+    #     if os.path.exists(doc["path"]):
+    #         process_and_upload(doc)
+    #     else:
+    #         print(f"\nFile not found: {doc['path']}")
 
-    print(f"\n--- Describe index:\n{index.describe_index_stats()}")
+    # print(f"\n--- Describe index:\n{index.describe_index_stats()}")
     #
     # Run a query
     analysis_query = "What were the main revenue drivers and how did they change?"
